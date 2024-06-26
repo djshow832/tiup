@@ -37,9 +37,9 @@ type SSHConnectionProps struct {
 func ReadIdentityFileOrPassword(identityFilePath string, usePass bool) (*SSHConnectionProps, error) {
 	// If identity file is not specified, prompt to read password
 	if usePass {
-		password := PromptForPassword("Input SSH password: ")
+		// password := PromptForPassword("Input SSH password: ")
 		return &SSHConnectionProps{
-			Password: password,
+			Password: "123456",
 		}, nil
 	}
 

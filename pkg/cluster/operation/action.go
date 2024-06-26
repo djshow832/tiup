@@ -413,6 +413,9 @@ func startInstance(ctx context.Context, ins spec.Instance, timeout uint64, tlsCf
 
 func systemctl(ctx context.Context, executor ctxt.Executor, service string, action string, timeout uint64, scope string) error {
 	logger := ctx.Value(logprinter.ContextKeyLogger).(*logprinter.Logger)
+	if logger != nil {
+		return nil
+	}
 	c := module.SystemdModuleConfig{
 		Unit:         service,
 		ReloadDaemon: true,

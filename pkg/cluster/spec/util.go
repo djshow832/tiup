@@ -195,7 +195,7 @@ func Abs(user, path string) string {
 	user = strings.TrimSpace(user)
 	path = strings.TrimSpace(path)
 	if !strings.HasPrefix(path, "/") {
-		path = filepath.Join("/home", user, path)
+		path = filepath.Join("/Users", user, path)
 	}
 	return filepath.Clean(path)
 }

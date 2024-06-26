@@ -122,7 +122,7 @@ func (m *Manager) ScaleOut(
 	}
 
 	var sudo bool
-	if topo.BaseTopo().GlobalOptions.SystemdMode == spec.UserMode {
+	/*if topo.BaseTopo().GlobalOptions.SystemdMode == spec.UserMode {
 		sudo = false
 		hint := fmt.Sprintf("loginctl enable-linger %s", opt.User)
 		msg := "The value of systemd_mode is set to `user` in the topology, please note that you'll need to manually execute the following command using root or sudo on the host(s) to enable lingering for the systemd user instance.\n"
@@ -135,7 +135,7 @@ func (m *Manager) ScaleOut(
 		}
 	} else {
 		sudo = opt.User != "root"
-	}
+	}*/
 
 	if err := m.fillHost(sshConnProps, sshProxyProps, newPart, &gOpt, opt.User, sudo); err != nil {
 		return err

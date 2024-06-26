@@ -150,7 +150,7 @@ func (m *Manager) Deploy(
 
 	var sudo bool
 	systemdMode := topo.BaseTopo().GlobalOptions.SystemdMode
-	if systemdMode == spec.UserMode {
+	/*if systemdMode == spec.UserMode {
 		sudo = false
 		hint := fmt.Sprintf("loginctl enable-linger %s", opt.User)
 
@@ -164,7 +164,7 @@ func (m *Manager) Deploy(
 		}
 	} else {
 		sudo = true
-	}
+	}*/
 
 	if err := m.fillHost(sshConnProps, sshProxyProps, topo, &gOpt, opt.User, opt.User != "root" && systemdMode != spec.UserMode); err != nil {
 		return err

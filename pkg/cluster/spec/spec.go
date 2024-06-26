@@ -288,7 +288,7 @@ func (s *Specification) MergeTopo(topo Topology) Topology {
 
 // GetMonitoredOptions implements Topology interface.
 func (s *Specification) GetMonitoredOptions() *MonitoredOptions {
-	return &s.MonitoredOptions
+	return nil //&s.MonitoredOptions
 }
 
 // TLSConfig generates a tls.Config for the specification as needed
