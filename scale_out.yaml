@@ -1,0 +1,4 @@
+tidb_servers:
+  - host: 127.0.0.1
+    port: 4001
+    status_port: 10081
